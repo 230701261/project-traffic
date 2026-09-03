@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # SUMO + TraCI Traffic Simulation with Interactive Digital Twin UI
 
 An interactive **Smart City Traffic Digital Twin** centered around **MA Chidambaram Stadium (Chepauk, Chennai)**, powered entirely by **Eclipse SUMO** and controlled via **Python TraCI**.
@@ -116,3 +117,6 @@ project Traffic/
 │
 └── README.md
 ```
+=======
+# project-traffic
+>>>>>>> 68b455cea22bbed8bbdf53f7c9d229e796347dfd
