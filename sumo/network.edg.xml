@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<edges xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/edges_file.xsd">
+    <!-- ==================== NORTH MAJOR ROAD (4-LANE DUAL CARRIAGEWAY) ==================== -->
+    <edge id="E_NORTH_IN_W" from="N_NW_IN_W" to="J_NW" type="major_4lane"/>
+    <edge id="E_NORTH_OUT_W" from="J_NW" to="N_NW_IN_W" type="major_4lane"/>
+    <edge id="E_NORTH_1" from="J_NW" to="J_N_CENTRAL" type="major_4lane"/>
+    <edge id="E_NORTH_1_rev" from="J_N_CENTRAL" to="J_NW" type="major_4lane"/>
+    <edge id="E_NORTH_2" from="J_N_CENTRAL" to="J_NE" type="major_4lane"/>
+    <edge id="E_NORTH_2_rev" from="J_NE" to="J_N_CENTRAL" type="major_4lane"/>
+    <edge id="E_NORTH_OUT_E" from="J_NE" to="N_NE_OUT_E" type="major_4lane"/>
+    <edge id="E_NORTH_IN_E" from="N_NE_OUT_E" to="J_NE" type="major_4lane"/>
+
+    <!-- ==================== WEST MAJOR ROAD (4-LANE DUAL CARRIAGEWAY) ==================== -->
+    <edge id="E_WEST_IN_N" from="N_NW_IN_N" to="J_NW" type="major_4lane"/>
+    <edge id="E_WEST_OUT_N" from="J_NW" to="N_NW_IN_N" type="major_4lane"/>
+    <edge id="E_WEST_1" from="J_NW" to="J_SW" type="major_4lane"/>
+    <edge id="E_WEST_1_rev" from="J_SW" to="J_NW" type="major_4lane"/>
+    <edge id="E_WEST_OUT_S" from="J_SW" to="N_SW_OUT_S" type="major_4lane"/>
+    <edge id="E_WEST_IN_S" from="N_SW_OUT_S" to="J_SW" type="major_4lane"/>
+
+    <!-- ==================== SOUTH MAJOR ROAD (4-LANE DUAL CARRIAGEWAY) ==================== -->
+    <edge id="E_SOUTH_IN_W" from="N_SW_OUT_W" to="J_SW" type="major_4lane"/>
+    <edge id="E_SOUTH_OUT_W" from="J_SW" to="N_SW_OUT_W" type="major_4lane"/>
+    <edge id="E_SOUTH_1" from="J_SW" to="J_S_CENTRAL" type="major_4lane"/>
+    <edge id="E_SOUTH_1_rev" from="J_S_CENTRAL" to="J_SW" type="major_4lane"/>
+    <edge id="E_SOUTH_2" from="J_S_CENTRAL" to="J_SE" type="major_4lane"/>
+    <edge id="E_SOUTH_2_rev" from="J_SE" to="J_S_CENTRAL" type="major_4lane"/>
+    <edge id="E_SOUTH_OUT_E" from="J_SE" to="N_SE_OUT_E" type="major_4lane"/>
+    <edge id="E_SOUTH_IN_E" from="N_SE_OUT_E" to="J_SE" type="major_4lane"/>
+
+    <!-- ==================== EAST MAJOR ROAD (4-LANE DUAL CARRIAGEWAY) ==================== -->
+    <edge id="E_EAST_IN_N" from="N_NE_OUT_N" to="J_NE" type="major_4lane"/>
+    <edge id="E_EAST_OUT_N" from="J_NE" to="N_NE_OUT_N" type="major_4lane"/>
+    <edge id="E_EAST_1" from="J_NE" to="J_SE" type="major_4lane"/>
+    <edge id="E_EAST_1_rev" from="J_SE" to="J_NE" type="major_4lane"/>
+    <edge id="E_EAST_OUT_S" from="J_SE" to="N_SE_OUT_S" type="major_4lane"/>
+    <edge id="E_EAST_IN_S" from="N_SE_OUT_S" to="J_SE" type="major_4lane"/>
+
+    <!-- ==================== CENTRAL STADIUM APPROACH ROAD (2-LANE SINGLE LINE) ==================== -->
+    <edge id="E_CENTRAL_1" from="J_N_CENTRAL" to="J_CENTRAL_STAD" type="minor_2lane"/>
+    <edge id="E_CENTRAL_1_rev" from="J_CENTRAL_STAD" to="J_N_CENTRAL" type="minor_2lane"/>
+    <edge id="E_CENTRAL_2" from="J_CENTRAL_STAD" to="J_S_CENTRAL" type="minor_2lane"/>
+    <edge id="E_CENTRAL_2_rev" from="J_S_CENTRAL" to="J_CENTRAL_STAD" type="minor_2lane"/>
+
+    <!-- ==================== STADIUM ACCESS & PLAZA ROADS ==================== -->
+    <edge id="E_STAD_ACC" from="J_CENTRAL_STAD" to="N_STAD_SOUTH_GATE" type="stadium_access"/>
+    <edge id="E_STAD_ACC_rev" from="N_STAD_SOUTH_GATE" to="J_CENTRAL_STAD" type="stadium_access"/>
+    <edge id="E_STAD_RING_SW" from="N_STAD_SOUTH_GATE" to="N_STAD_WEST_GATE" type="stadium_access"/>
+    <edge id="E_STAD_RING_WS" from="N_STAD_WEST_GATE" to="N_STAD_SOUTH_GATE" type="stadium_access"/>
+    <edge id="E_STAD_RING_SE" from="N_STAD_SOUTH_GATE" to="N_STAD_EAST_GATE" type="stadium_access"/>
+    <edge id="E_STAD_RING_ES" from="N_STAD_EAST_GATE" to="N_STAD_SOUTH_GATE" type="stadium_access"/>
+
+    <!-- ==================== CONTINUOUS ELEVATED RAILWAY VIADUCT (Z = 8.0m) ==================== -->
+    <!-- Southbound Track -->
+    <edge id="E_RAIL_SB_1" from="N_RAIL_IN_N" to="N_RAIL_VIADUCT_N" type="elevated_railway"/>
+    <edge id="E_RAIL_SB_2" from="N_RAIL_VIADUCT_N" to="N_STATION_ELEVATED" type="elevated_railway"/>
+    <edge id="E_RAIL_SB_3" from="N_STATION_ELEVATED" to="N_RAIL_VIADUCT_S" type="elevated_railway"/>
+    <edge id="E_RAIL_SB_4" from="N_RAIL_VIADUCT_S" to="N_RAIL_OUT_S" type="elevated_railway"/>
+    
+    <!-- Northbound Track -->
+    <edge id="E_RAIL_NB_1" from="N_RAIL_OUT_S" to="N_RAIL_VIADUCT_S" type="elevated_railway"/>
+    <edge id="E_RAIL_NB_2" from="N_RAIL_VIADUCT_S" to="N_STATION_ELEVATED" type="elevated_railway"/>
+    <edge id="E_RAIL_NB_3" from="N_STATION_ELEVATED" to="N_RAIL_VIADUCT_N" type="elevated_railway"/>
+    <edge id="E_RAIL_NB_4" from="N_RAIL_VIADUCT_N" to="N_RAIL_IN_N" type="elevated_railway"/>
+
+    <!-- ==================== DEDICATED ORANGE PEDESTRIAN NETWORK (GROUND Z = 0.0m) ==================== -->
+    <!-- Vertical stairs from Elevated Station (Z=8m) to Ground Plaza (Z=0m) -->
+    <edge id="E_PED_STAIRS_DOWN" from="N_STATION_ELEVATED" to="N_STATION_GROUND" type="pedestrian_orange"/>
+    <edge id="E_PED_STAIRS_UP" from="N_STATION_GROUND" to="N_STATION_ELEVATED" type="pedestrian_orange"/>
+
+    <!-- Orange Walkway from Station Ground Plaza to Stadium East Gate -->
+    <edge id="E_PED_STATION_STAD" from="N_STATION_GROUND" to="N_STAD_EAST_GATE" type="pedestrian_orange"/>
+    <edge id="E_PED_STATION_STAD_rev" from="N_STAD_EAST_GATE" to="N_STATION_GROUND" type="pedestrian_orange"/>
+
+    <!-- Orange Walkway from Stadium East Gate to Stadium South Gate -->
+    <edge id="E_PED_STAD_PLAZA" from="N_STAD_EAST_GATE" to="N_STAD_SOUTH_GATE" type="pedestrian_orange"/>
+    <edge id="E_PED_STAD_PLAZA_rev" from="N_STAD_SOUTH_GATE" to="N_STAD_EAST_GATE" type="pedestrian_orange"/>
+
+    <!-- Orange Walkway from Stadium South Gate to Central Approach Road -->
+    <edge id="E_PED_STAD_CENTRAL" from="N_STAD_SOUTH_GATE" to="J_CENTRAL_STAD" type="pedestrian_orange"/>
+    <edge id="E_PED_STAD_CENTRAL_rev" from="J_CENTRAL_STAD" to="N_STAD_SOUTH_GATE" type="pedestrian_orange"/>
+
+    <!-- Orange Walkways to Beach Promenades (Blue Area) -->
+    <edge id="E_PED_BEACH_ACCESS_N" from="J_NE" to="N_BEACH_NORTH" type="pedestrian_orange"/>
+    <edge id="E_PED_BEACH_ACCESS_N_rev" from="N_BEACH_NORTH" to="J_NE" type="pedestrian_orange"/>
+    <edge id="E_PED_BEACH_ACCESS_S" from="J_SE" to="N_BEACH_SOUTH" type="pedestrian_orange"/>
+    <edge id="E_PED_BEACH_ACCESS_S_rev" from="N_BEACH_SOUTH" to="J_SE" type="pedestrian_orange"/>
+    <edge id="E_PED_BEACH_PROMENADE" from="N_BEACH_NORTH" to="N_BEACH_SOUTH" type="pedestrian_orange"/>
+    <edge id="E_PED_BEACH_PROMENADE_rev" from="N_BEACH_SOUTH" to="N_BEACH_NORTH" type="pedestrian_orange"/>
+</edges>

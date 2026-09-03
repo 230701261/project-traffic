@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<types xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/types_file.xsd">
+    <type id="major_4lane" priority="3" numLanes="2" speed="13.89" width="3.30" allow="passenger taxi motorcycle bus emergency" sidewalkWidth="2.00"/>
+    <type id="minor_2lane" priority="2" numLanes="1" speed="11.11" width="3.20" allow="passenger taxi motorcycle bus emergency" sidewalkWidth="1.80"/>
+    <type id="stadium_access" priority="1" numLanes="1" speed="8.33" width="3.50" allow="passenger taxi motorcycle bus emergency" sidewalkWidth="2.50"/>
+    <type id="elevated_railway" priority="4" numLanes="1" speed="22.22" width="3.80" allow="rail rail_urban"/>
+    <type id="pedestrian_orange" priority="1" numLanes="1" speed="2.00" width="4.20" allow="pedestrian"/>
+</types>

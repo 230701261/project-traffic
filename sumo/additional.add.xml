@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<additional xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/additional_file.xsd">
+    <!-- ==================== 7 BUS STOPS (EXACT YELLOW TRIANGLES ON MAP) ==================== -->
+    <!-- 1. North Major Road (West section, near NW junction) -->
+    <busStop id="BS_1_NORTH" lane="E_NORTH_1_1" startPos="40.0" endPos="65.0" lines="MTC_NORTH MTC_CIRCULAR SHUTTLE_STADIUM" friendlyPos="true"/>
+
+    <!-- 2. West Major Road (Upper section) -->
+    <busStop id="BS_2_WEST_UP" lane="E_WEST_1_1" startPos="120.0" endPos="145.0" lines="MTC_WEST MTC_CIRCULAR" friendlyPos="true"/>
+
+    <!-- 3. West Major Road (Lower section near SW junction) -->
+    <busStop id="BS_3_WEST_DOWN" lane="E_WEST_1_1" startPos="480.0" endPos="505.0" lines="MTC_WEST MTC_CIRCULAR" friendlyPos="true"/>
+
+    <!-- 4. Central Stadium Approach Road (Directly west of Stadium) -->
+    <busStop id="BS_4_CENTRAL" lane="E_CENTRAL_1_1" startPos="160.0" endPos="185.0" lines="SHUTTLE_STADIUM MTC_CENTRAL" friendlyPos="true"/>
+
+    <!-- 5. East Major Road (Upper section near Beach, Northbound) -->
+    <busStop id="BS_5_EAST_UP" lane="E_EAST_1_rev_1" startPos="450.0" endPos="475.0" lines="MTC_EAST MTC_BEACH SHUTTLE_STADIUM" friendlyPos="true"/>
+
+    <!-- 6. East Major Road (Lower section near Beach, Southbound) -->
+    <busStop id="BS_6_EAST_DOWN" lane="E_EAST_1_1" startPos="420.0" endPos="445.0" lines="MTC_EAST MTC_BEACH" friendlyPos="true"/>
+
+    <!-- 7. South Major Road (East section near Beach junction) -->
+    <busStop id="BS_7_SOUTH" lane="E_SOUTH_2_1" startPos="180.0" endPos="205.0" lines="MTC_SOUTH MTC_CIRCULAR SHUTTLE_STADIUM" friendlyPos="true"/>
+
+    <!-- ==================== SINGLE PRIMARY ELEVATED TRAIN STATION (CHEPAUK STATION, Z = 8.0m) ==================== -->
+    <trainStop id="RS_CHEPAUK_ELEVATED_SB" lane="E_RAIL_SB_2_0" startPos="15.0" endPos="80.0" lines="MRTS_SOUTHBOUND" friendlyPos="true"/>
+    <trainStop id="RS_CHEPAUK_ELEVATED_NB" lane="E_RAIL_NB_2_0" startPos="15.0" endPos="80.0" lines="MRTS_NORTHBOUND" friendlyPos="true"/>
+
+    <!-- ==================== 3D LANDMARK POLYGONS ==================== -->
+    <!-- Green Circle Stadium Area (Setback with >30m buffer from roads) -->
+    <poly id="poly_stadium" color="22,163,74,255" fill="true" layer="-1"
+          shape="440,488 474,474 488,440 474,406 440,392 406,406 392,440 406,474"/>
+
+    <!-- Single Chepauk Station Area -->
+    <poly id="poly_station_elevated" color="185,28,28,255" fill="true" layer="-1"
+          shape="520,410 535,400 535,380 520,370 505,380 505,400"/>
+
+    <!-- Blue Area Marina Beach (Separated naturally beyond east sidewalk) -->
+    <poly id="poly_beach" color="2,132,199,255" fill="true" layer="-2"
+          shape="760,560 920,530 920,-70 730,-30"/>
+</additional>

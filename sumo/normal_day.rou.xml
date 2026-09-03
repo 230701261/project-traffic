@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+    <!-- ==================== VEHICLE & PEDESTRIAN TYPE DEFINITIONS ==================== -->
+    <vType id="car" vClass="passenger" length="4.5" width="1.8" maxSpeed="14.0" accel="2.6" decel="4.5" sigma="0.5" carFollowModel="IDM" color="6,182,212"/>
+    <vType id="taxi" vClass="taxi" length="4.5" width="1.8" maxSpeed="13.0" accel="2.4" decel="4.5" sigma="0.5" carFollowModel="IDM" color="234,179,8"/>
+    <vType id="motorcycle" vClass="motorcycle" length="2.2" width="0.9" maxSpeed="16.0" accel="3.2" decel="5.0" sigma="0.5" carFollowModel="IDM" color="249,115,22"/>
+    <vType id="bus" vClass="bus" length="11.0" width="2.6" maxSpeed="11.0" accel="1.8" decel="3.5" sigma="0.3" carFollowModel="IDM" color="168,85,247"/>
+    <vType id="train" vClass="rail_urban" length="58.0" width="3.2" maxSpeed="22.0" accel="1.2" decel="2.5" sigma="0.1" carFollowModel="Krauss" color="59,130,246"/>
+
+    <vType id="ped_stadium" vClass="pedestrian" length="0.5" width="0.5" maxSpeed="1.35" color="250,204,21"/>
+    <vType id="ped_beach" vClass="pedestrian" length="0.5" width="0.5" maxSpeed="1.30" color="56,189,248"/>
+    <vType id="ped_local" vClass="pedestrian" length="0.5" width="0.5" maxSpeed="1.25" color="148,163,184"/>
+
+    <!-- ==================== ROAD NETWORK ROUTES ==================== -->
+    <route id="r_north_eb" edges="E_NORTH_IN_W E_NORTH_1 E_NORTH_2 E_NORTH_OUT_E"/>
+    <route id="r_north_wb" edges="E_NORTH_IN_E E_NORTH_2_rev E_NORTH_1_rev E_NORTH_OUT_W"/>
+    <route id="r_west_sb" edges="E_WEST_IN_N E_WEST_1 E_WEST_OUT_S"/>
+    <route id="r_west_nb" edges="E_WEST_IN_S E_WEST_1_rev E_WEST_OUT_N"/>
+    <route id="r_south_eb" edges="E_SOUTH_IN_W E_SOUTH_1 E_SOUTH_2 E_SOUTH_OUT_E"/>
+    <route id="r_south_wb" edges="E_SOUTH_IN_E E_SOUTH_2_rev E_SOUTH_1_rev E_SOUTH_OUT_W"/>
+    <route id="r_east_sb" edges="E_EAST_IN_N E_EAST_1 E_EAST_OUT_S"/>
+    <route id="r_east_nb" edges="E_EAST_IN_S E_EAST_1_rev E_EAST_OUT_N"/>
+
+    <route id="r_cross_nw_se" edges="E_NORTH_IN_W E_NORTH_1 E_CENTRAL_1 E_CENTRAL_2 E_SOUTH_2 E_SOUTH_OUT_E"/>
+    <route id="r_cross_se_nw" edges="E_SOUTH_IN_W E_SOUTH_1 E_CENTRAL_2_rev E_CENTRAL_1_rev E_NORTH_2 E_NORTH_OUT_E"/>
+    <route id="r_stad_casual" edges="E_NORTH_IN_W E_NORTH_1 E_CENTRAL_1 E_STAD_ACC E_STAD_RING_SW E_STAD_RING_WS E_STAD_ACC_rev E_CENTRAL_2 E_SOUTH_2 E_SOUTH_OUT_E"/>
+
+    <route id="r_bus_north_east" edges="E_NORTH_IN_W E_NORTH_1 E_NORTH_2 E_EAST_1 E_EAST_OUT_S"/>
+    <route id="r_bus_circular" edges="E_WEST_IN_N E_WEST_1 E_SOUTH_1 E_SOUTH_2 E_EAST_1_rev E_NORTH_2_rev E_CENTRAL_1 E_CENTRAL_2 E_SOUTH_2 E_SOUTH_OUT_E"/>
+
+    <route id="r_train_sb" edges="E_RAIL_SB_1 E_RAIL_SB_2 E_RAIL_SB_3 E_RAIL_SB_4"/>
+    <route id="r_train_nb" edges="E_RAIL_NB_1 E_RAIL_NB_2 E_RAIL_NB_3 E_RAIL_NB_4"/>
+
+    <!-- ==================== FLOWS SORTED BY DEPART/BEGIN ==================== -->
+    <!-- Begin = 0 -->
+    <personFlow id="pflow_beach_north" type="ped_beach" begin="0" end="3600" personsPerHour="180">
+        <walk edges="E_NORTH_2 E_PED_BEACH_ACCESS_N E_PED_BEACH_PROMENADE"/>
+    </personFlow>
+    <personFlow id="pflow_beach_south" type="ped_beach" begin="0" end="3600" personsPerHour="160">
+        <walk edges="E_SOUTH_2 E_PED_BEACH_ACCESS_S E_PED_BEACH_PROMENADE_rev"/>
+    </personFlow>
+    <personFlow id="pflow_local_west" type="ped_local" begin="0" end="3600" personsPerHour="120">
+        <walk edges="E_WEST_1 E_SOUTH_1"/>
+    </personFlow>
+    <personFlow id="pflow_rail_diffuse" type="ped_local" begin="0" end="3600" personsPerHour="90">
+        <walk edges="E_PED_STAIRS_DOWN E_PED_STATION_STAD E_PED_STAD_PLAZA E_PED_STAD_CENTRAL E_CENTRAL_2 E_SOUTH_2"/>
+    </personFlow>
+    <personFlow id="pflow_stad_casual" type="ped_stadium" begin="0" end="3600" personsPerHour="50">
+        <walk edges="E_PED_STAIRS_DOWN E_PED_STATION_STAD E_PED_STAD_PLAZA"/>
+    </personFlow>
+
+    <flow id="f_car_north_eb" type="car" route="r_north_eb" begin="0" end="3600" vehsPerHour="320" departLane="best" departSpeed="max"/>
+    <flow id="f_car_north_wb" type="car" route="r_north_wb" begin="0" end="3600" vehsPerHour="300" departLane="best" departSpeed="max"/>
+    <flow id="f_car_west_sb" type="car" route="r_west_sb" begin="0" end="3600" vehsPerHour="260" departLane="best" departSpeed="max"/>
+    <flow id="f_car_west_nb" type="car" route="r_west_nb" begin="0" end="3600" vehsPerHour="250" departLane="best" departSpeed="max"/>
+    <flow id="f_car_south_eb" type="car" route="r_south_eb" begin="0" end="3600" vehsPerHour="280" departLane="best" departSpeed="max"/>
+    <flow id="f_car_south_wb" type="car" route="r_south_wb" begin="0" end="3600" vehsPerHour="270" departLane="best" departSpeed="max"/>
+    <flow id="f_car_east_sb" type="car" route="r_east_sb" begin="0" end="3600" vehsPerHour="320" departLane="best" departSpeed="max"/>
+    <flow id="f_car_east_nb" type="car" route="r_east_nb" begin="0" end="3600" vehsPerHour="310" departLane="best" departSpeed="max"/>
+    <flow id="f_cross_nw_se" type="car" route="r_cross_nw_se" begin="0" end="3600" vehsPerHour="120" departLane="best" departSpeed="max"/>
+    <flow id="f_cross_se_nw" type="car" route="r_cross_se_nw" begin="0" end="3600" vehsPerHour="110" departLane="best" departSpeed="max"/>
+    <flow id="f_taxi_stad" type="taxi" route="r_stad_casual" begin="0" end="3600" vehsPerHour="35" departLane="best" departSpeed="max"/>
+    <flow id="f_moto_north" type="motorcycle" route="r_north_eb" begin="0" end="3600" vehsPerHour="140" departLane="best" departSpeed="max"/>
+    <flow id="f_moto_south" type="motorcycle" route="r_south_eb" begin="0" end="3600" vehsPerHour="130" departLane="best" departSpeed="max"/>
+    <flow id="f_moto_west" type="motorcycle" route="r_west_sb" begin="0" end="3600" vehsPerHour="120" departLane="best" departSpeed="max"/>
+    <flow id="f_moto_east" type="motorcycle" route="r_east_sb" begin="0" end="3600" vehsPerHour="130" departLane="best" departSpeed="max"/>
+
+    <!-- Begin > 0 -->
+    <flow id="f_bus_north_east" type="bus" route="r_bus_north_east" begin="10" end="3600" period="140" departLane="best">
+        <stop busStop="BS_1_NORTH" duration="20"/>
+        <stop busStop="BS_6_EAST_DOWN" duration="20"/>
+    </flow>
+    <flow id="f_train_sb" type="train" route="r_train_sb" begin="15" end="3600" period="140">
+        <stop trainStop="RS_CHEPAUK_ELEVATED_SB" duration="30"/>
+    </flow>
+    <flow id="f_bus_circular" type="bus" route="r_bus_circular" begin="40" end="3600" period="180" departLane="best">
+        <stop busStop="BS_2_WEST_UP" duration="20"/>
+        <stop busStop="BS_3_WEST_DOWN" duration="20"/>
+        <stop busStop="BS_7_SOUTH" duration="20"/>
+        <stop busStop="BS_4_CENTRAL" duration="20"/>
+    </flow>
+    <flow id="f_train_nb" type="train" route="r_train_nb" begin="75" end="3600" period="140">
+        <stop trainStop="RS_CHEPAUK_ELEVATED_NB" duration="30"/>
+    </flow>
+</routes>

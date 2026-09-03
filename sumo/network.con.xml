@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<connections xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/connections_file.xsd">
+    <!-- Stadium East Gate: Pedestrian bridge connects to Stadium ring walkways -->
+    <connection from="E_PED_BRIDGE_STAD" to="E_STAD_RING_EN" fromLane="0" toLane="0"/>
+    <connection from="E_PED_BRIDGE_STAD" to="E_STAD_RING_ES" fromLane="0" toLane="0"/>
+    <connection from="E_STAD_RING_NE" to="E_PED_BRIDGE_STAD_rev" fromLane="0" toLane="0"/>
+    <connection from="E_STAD_RING_SE" to="E_PED_BRIDGE_STAD_rev" fromLane="0" toLane="0"/>
+    <!-- Vehicular lane connections around East Gate -->
+    <connection from="E_STAD_RING_NE" to="E_STAD_RING_ES" fromLane="1" toLane="1"/>
+    <connection from="E_STAD_RING_SE" to="E_STAD_RING_EN" fromLane="1" toLane="1"/>
+
+    <!-- Crossings across roads for pedestrians -->
+    <crossing node="J_WAL_QUAID" edges="E_WAL_1 E_WAL_1_rev"/>
+    <crossing node="J_WAL_QUAID" edges="E_QUAID_1 E_QUAID_1_rev"/>
+    <crossing node="J_WAL_BELLS" edges="E_WAL_2 E_WAL_2_rev"/>
+    <crossing node="J_WAL_BELLS" edges="E_BELLS_1 E_BELLS_1_rev"/>
+    <crossing node="J_WAL_RAIL" edges="E_WAL_4 E_WAL_4_rev"/>
+    <crossing node="J_WAL_KAM" edges="E_KAM_1 E_KAM_1_rev"/>
+    <crossing node="J_PYC_QUAID" edges="E_PYC_1 E_PYC_1_rev"/>
+    <crossing node="J_PYC_BELLS" edges="E_PYC_2 E_PYC_2_rev"/>
+    <crossing node="J_PYC_BELLS" edges="E_BELLS_2 E_BELLS_2_rev"/>
+    <crossing node="J_PYC_KAM" edges="E_KAM_4_rev E_KAM_4"/>
+    <crossing node="J_BELLS_STAD" edges="E_BELLS_1 E_BELLS_1_rev"/>
+    <crossing node="J_BELLS_STAD" edges="E_STAD_ACC_W E_STAD_ACC_W_rev"/>
+</connections>
